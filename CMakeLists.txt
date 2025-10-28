@@ -7,5 +7,5 @@ include_directories(.)
 
 add_executable(LumeCalc
         LICENSE
-        LumeCalc.c
+        calc.c
         README.md)
