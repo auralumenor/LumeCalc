@@ -1,0 +1,29 @@
+# Compiler and flags
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99 -lm
+
+# Source files
+SRCS = main.c calc.c utils.c
+OBJS = $(SRCS:.c=.o)
+
+# Output binary
+TARGET = lumecalc
+
+# Default target
+all: $(TARGET)
+
+# Link object files to create the final executable
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+
+# Compile .c files to .o object files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Clean up build artifacts
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+# Run the program
+run: $(TARGET)
+	./$(TARGET)

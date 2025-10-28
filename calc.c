@@ -25,8 +25,8 @@ double logx(double);
 int main() {
 
 
-    intro();            // Callled
-    mode();
+    intro();            // Callled Intro function
+    mode();             // Called Mode
 
 
     getch();
