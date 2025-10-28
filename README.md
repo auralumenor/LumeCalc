@@ -1,6 +1,10 @@
+
 # 🌟 LumeCalc
 
 **LumeCalc** is a lightweight, fast, and extensible calculator built in C. Designed for simplicity and performance, it supports a range of arithmetic and scientific operations directly from the command line.
+## 🚧 Work in Progress
+
+This project is not yet complete and is actively being developed. Expect frequent updates and possible breaking changes.
 
 ## 🚀 Features
 
