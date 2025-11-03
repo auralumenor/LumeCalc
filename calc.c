@@ -14,11 +14,11 @@ int add(int,int);
 int sub(int,int);
 int mult(int,int);
 float div(int,int);
-double squart(double);
+double sqrt_custom(double);
 double powr(double);
-double sin(double);
-double cos(double);
-double logx(double);
+double mysin(double);
+double mycos(double);
+double log10x(double);
 
 // Main Function
 
@@ -93,28 +93,28 @@ void sci_men(){
     float a;
     char op;
     do {
-        printf("Enter the operator you want to use:\n1. Square Root\n2. Power\n3. Sine\n4. Cosine\n5. Logarithm\n6. Exit\n");
+        printf("\nEnter the operator you want to use:\n1. Square Root\n2. Power\n3. Sine\n4. Cosine\n5. Logarithm\n6. Exit\n");
         scanf(" %c",&op);
         switch(op){
             case '1':
                 get2(&a);
-                squart(a);
+                printf("Result: %.2f\n", sqrt_custom(a));
                 break;
             case '2':
                 get2(&a);
-                powr(a);
+                printf("Result: %.2f\n", powr(a));
                 break;
             case '3':
                 get2(&a);
-                sin(a);
+                mysin(a);
                 break;
             case '4':
                 get2(&a);
-                cos(a);
+                mycos(a);
                 break;
             case '5':
                 get2(&a);
-                logx(a);
+                printf("Result: %.2f\n", log10x(a));
                 break;
             default:
             printf("Invalid Prompt\n");
@@ -127,7 +127,7 @@ void get1(int *a, int *b){
 }
 void get2(float *a){
     printf("Enter a number:\n");
-    scanf("%lf",a);
+    scanf("%f",a);
 }
 int add(int a, int b){
     printf("The Sum is: %d\n", a+b);
@@ -144,39 +144,40 @@ int mult(int a, int b){
 float div(int a, int b){
     if (b == 0){
         printf("Division by Zero is not possible\n");
+        return 0.0f;
     } else {
     printf("The Quotient is: %.2f\n",(float)a/b);
     return (float)a/b;
     }
 }
-double squart(double a){
-    if (a>0){
+double sqrt_custom(double a){
+    if (a<0){
         printf("Square root is not possible for negative integers\n");
         return -1;
     } else if (a==0){
         printf("Are you kidding me cuz Everyone knows root of zero is 0\n");
         return 0;
-    } else {
+    } else if (a>0){
         printf("Square root of %.2f is: %.2f\n", a, sqrt(a));
         return sqrt(a);
     }
 }
 double powr(double a){
-        float b;
+        double b;
         printf("Enter the exponential value which you want to apply:\n");
-        scanf("%f",&b);
+        scanf("%lf",&b);
         printf("%.2f is raised to %.2f is: %.2f\n", a, b, pow(a, b));
         return pow(a, b);
 }
-double sin(double a){
+double mysin(double a){
         printf("Sine of %.2f radians is %.2f\n", a, sinf(a));
         return sinf(a);
 }
-double cos(double a){
+double mycos(double a){
         printf("Cosine of %.2f radians is %.2f\n", a, cosf(a));
         return cosf(a);
 }
-double logx(double a){
+double log10x(double a) {
         if (a<=0) {
             printf("Logarithm is undefined for zero and negative numbers\n");
             return -1;
@@ -184,4 +185,5 @@ double logx(double a){
             printf("Log base 10 of %.2f is: %.2f\n", a, log10(a));
             return log10(a);
         }
-}
+       }
+
