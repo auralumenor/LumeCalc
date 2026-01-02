@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <conio.h>
-
 // Functions Initializaton
 
 void intro();
@@ -18,6 +17,7 @@ double sqrt_custom(double);
 double powr(double);
 double mysin(double);
 double mycos(double);
+double mytan(double);
 double log10x(double);
 
 // Main Function
@@ -90,10 +90,10 @@ void main_men(){
     } while (op != '5');
 }
 void sci_men(){
-    float a;
+    double a;           //Shifted to double operator
     char op;
     do {
-        printf("\nEnter the operator you want to use:\n1. Square Root\n2. Power\n3. Sine\n4. Cosine\n5. Logarithm\n6. Exit\n");
+        printf("\nEnter the operator you want to use:\n1. Square Root\n2. Power\n3. Sin\n4. Cos\n5. Tan\n6. Logarithm\n7. Exit\n");
         scanf(" %c",&op);
         switch(op){
             case '1':
@@ -114,12 +114,16 @@ void sci_men(){
                 break;
             case '5':
                 get2(&a);
+                mytan(a);
+                break;
+            case '6':
+                get2(&a);
                 printf("Result: %.2f\n", log10x(a));
                 break;
             default:
             printf("Invalid Prompt\n");
         }
-    } while (op != '6');
+    } while (op != '7');
 }
 void get1(int *a, int *b){
     printf("Enter 2 numbers:\n");
@@ -170,12 +174,16 @@ double powr(double a){
         return pow(a, b);
 }
 double mysin(double a){
-        printf("Sine of %.2f radians is %.2f\n", a, sinf(a));
+        printf("Sin of %.2f radians is %.2f\n", a, sinf(a));
         return sinf(a);
 }
 double mycos(double a){
-        printf("Cosine of %.2f radians is %.2f\n", a, cosf(a));
+        printf("Cos of %.2f radians is %.2f\n", a, cosf(a));
         return cosf(a);
+}
+double mytan(double a){
+        printf("Tan of %.2f radians is %.2f\n", a, tanf(a));
+        return tanf(a);
 }
 double log10x(double a) {
         if (a<=0) {
