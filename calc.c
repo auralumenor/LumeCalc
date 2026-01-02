@@ -7,17 +7,22 @@ void intro();
 void mode();            // Made a selector
 void main_men();        // For normal calculations
 void sci_men();         // For scientific calculations
+void tri_men();         // For trigonometric calculations
 void get1(int*,int*);
 void get2(float*);
+void get3(float*);
 int add(int,int);
 int sub(int,int);
 int mult(int,int);
 float div(int,int);
 double sqrt_custom(double);
 double powr(double);
-double mysin(double);
-double mycos(double);
-double mytan(double);
+float mysin(float);
+float mycos(float);
+float mytan(float);
+float mycot(float);
+float mysec(float);
+float mycosec(float);
 double log10x(double);
 
 // Main Function
@@ -43,7 +48,7 @@ void intro(){
 void mode(){
     char op;
     do{
-        printf("Choose the calculator type you want:\n1. Simple Calculator\n2. Scientific calculator\n3. Exit\n");
+        printf("Choose the calculator type you want:\n1. Simple Calculator\n2. Scientific calculator\n3. Trigonometric calculator\n4. Exit\n");
         scanf(" %c",&op);
         switch(op){
             case '1':
@@ -53,6 +58,9 @@ void mode(){
             sci_men();
             break;
             case '3':
+            tri_men();
+            break;
+            case '4':
             break;
             default:
             printf("Invalid prompt\n");
@@ -90,7 +98,7 @@ void main_men(){
     } while (op != '5');
 }
 void sci_men(){
-    double a;           //Shifted to double operator
+    float a;           //Shifted to float operator
     char op;
     do {
         printf("\nEnter the operator you want to use:\n1. Square Root\n2. Power\n3. Sin\n4. Cos\n5. Tan\n6. Logarithm\n7. Exit\n");
@@ -120,16 +128,60 @@ void sci_men(){
                 get2(&a);
                 printf("Result: %.2f\n", log10x(a));
                 break;
+            case '7':
+                break;
             default:
             printf("Invalid Prompt\n");
         }
     } while (op != '7');
 }
+void tri_men(){
+    float a;
+    char op;
+    do {
+        printf("Enter the operator you want to use:\n1. Sine\n2. Cosine\n3. Tangent\n4. Arctangent\n5. ArcCosine\n6. ArcSine\n7.Exit\n");
+        scanf("%c",&op);
+        switch(op){
+            case '1':
+                get3(&a);
+                printf("Result %.2f\n",mysin(a));
+                break;
+            case '2':
+                get3(&a);
+                printf("Result %.2f\n",mycos(a));
+                break;
+            case '3':
+                get3(&a);
+                printf("Result %.2f\n",mytan(a));
+                break;
+            case '4':
+                get3(&a);
+                printf("Result %.2f\n",mycot(a));
+                break;
+            case '5':
+                get3(&a);
+                printf("Result %.2f\n",mysec(a));
+                break;
+            case '6':
+                get3(&a);
+                printf("Result %.2f\n",mycosec(a));
+                break;
+            case '7':
+                break;
+            default:
+                printf("Invalid Prompt\n");
+        }
+    } while(op != '7');
+}
 void get1(int *a, int *b){
     printf("Enter 2 numbers:\n");
     scanf("%d%d",a,b);
 }
-void get2(float *a){
+void get2(float *a){               //Fixed
+    printf("Enter a number:\n");
+    scanf("%f",a);
+}
+void get3(float *a){
     printf("Enter a number:\n");
     scanf("%f",a);
 }
@@ -167,23 +219,35 @@ double sqrt_custom(double a){
     }
 }
 double powr(double a){
-        double b;
+        float b;
         printf("Enter the exponential value which you want to apply:\n");
         scanf("%lf",&b);
         printf("%.2f is raised to %.2f is: %.2f\n", a, b, pow(a, b));
         return pow(a, b);
 }
-double mysin(double a){
-        printf("Sin of %.2f radians is %.2f\n", a, sinf(a));
+float mysin(float a){
+        printf("Sine of %.2f radians is %.2f\n", a, sinf(a));
         return sinf(a);
 }
-double mycos(double a){
-        printf("Cos of %.2f radians is %.2f\n", a, cosf(a));
+float mycos(float a){
+        printf("Cosine of %.2f radians is %.2f\n", a, cosf(a));
         return cosf(a);
 }
-double mytan(double a){
-        printf("Tan of %.2f radians is %.2f\n", a, tanf(a));
+float mytan(float a){
+        printf("Tangent of %.2f radians is %.2f\n", a, tanf(a));
         return tanf(a);
+}
+float mysec(float a){
+        printf("Arccos of %.2f radians is %.2f\n", a, acosf(a));
+        return acosf(a);
+}
+float mycot(float a){
+        printf("Arctangent of %.2f radians is %.2f\n", a, atanf(a));
+        return atanf(a);
+}
+float mycosec(float a){
+        printf("Arcsin of %.2f radians is %.2f\n", a, asinf(a));
+        return asinf(a);
 }
 double log10x(double a) {
         if (a<=0) {
