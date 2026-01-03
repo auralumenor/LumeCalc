@@ -1,0 +1,8 @@
+[
+{
+  "directory": "E:/BTech_AI_ML/Semester_1/Other _works/LumeCalc/build",
+  "command": "C:\\MinGW64\\bin\\gcc.exe  @CMakeFiles/LumeCalc.dir/includes_C.rsp -g -o CMakeFiles\\LumeCalc.dir\\calc.c.obj -c \"E:\\BTech_AI_ML\\Semester_1\\Other _works\\LumeCalc\\calc.c\"",
+  "file": "E:/BTech_AI_ML/Semester_1/Other _works/LumeCalc/calc.c",
+  "output": "CMakeFiles/LumeCalc.dir/calc.c.obj"
+}
+]

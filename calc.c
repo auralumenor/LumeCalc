@@ -65,7 +65,7 @@ void mode(){
             default:
             printf("Invalid prompt\n");
         }
-    } while (op != '3');
+    } while (op != '4');
 }
 void main_men(){
         int a, b;
@@ -101,7 +101,7 @@ void sci_men(){
     float a;           //Shifted to float operator
     char op;
     do {
-        printf("\nEnter the operator you want to use:\n1. Square Root\n2. Power\n3. Sin\n4. Cos\n5. Tan\n6. Logarithm\n7. Exit\n");
+        printf("\nEnter the operator you want to use:\n1. Square Root\n2. Power\n3. Logarithm\n4. Exit\n");
         scanf(" %c",&op);
         switch(op){
             case '1':
@@ -114,26 +114,14 @@ void sci_men(){
                 break;
             case '3':
                 get2(&a);
-                mysin(a);
-                break;
-            case '4':
-                get2(&a);
-                mycos(a);
-                break;
-            case '5':
-                get2(&a);
-                mytan(a);
-                break;
-            case '6':
-                get2(&a);
                 printf("Result: %.2f\n", log10x(a));
                 break;
-            case '7':
+            case '4':
                 break;
             default:
             printf("Invalid Prompt\n");
         }
-    } while (op != '7');
+    } while (op != '4');
 }
 void tri_men(){
     float a;
