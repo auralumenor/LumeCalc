@@ -8,8 +8,9 @@ void mode();            // Made a selector
 void main_men();        // For normal calculations
 void sci_men();         // For scientific calculations
 void tri_men();         // For trigonometric calculations
+void mat_men();
 void get1(int*,int*);
-void get2(float*);
+void get2(double*);
 void get3(float*);
 int add(int,int);
 int sub(int,int);
@@ -42,13 +43,13 @@ int main() {
 // Functions Declaration
 
 void intro(){
-    printf("Welcome To LumeCalc\n");
-    printf("The calculator By Lumenor\n");
+    printf("------------------------------------Welcome To LumeCalc------------------------------------\n");
+    printf("\n---------------------------------The calculator By Lumenor---------------------------------\n");
 }
 void mode(){
     char op;
     do{
-        printf("Choose the calculator type you want:\n1. Simple Calculator\n2. Scientific calculator\n3. Trigonometric calculator\n4. Exit\n");
+        printf("\nChoose the calculator type you want:\n1. Simple Calculator\n2. Scientific calculator\n3. Trigonometric calculator\n4. Exit\n");
         scanf(" %c",&op);
         switch(op){
             case '1':
@@ -98,7 +99,7 @@ void main_men(){
     } while (op != '5');
 }
 void sci_men(){
-    float a;           //Shifted to float operator
+    double a;           //Shifted to float operator
     char op;
     do {
         printf("Enter the operator you want to use:\n1. Square Root\n2. Power\n3. Logarithm\n4. Exit\n");
@@ -161,11 +162,33 @@ void tri_men(){
         }
     } while(op != '7');
 }
+void mat_men(){
+    char a;
+    do{
+        printf("Choose the Matrix you want to use \n1. 1x2 matrix\n2. 2x2 matrix\n3. 3x3 matrix\n4. Exit\n");
+        scanf(" %c",&a);
+        switch(a){
+            case '1':
+
+                break;
+            case '2':
+
+                break;
+            case '3':
+
+                break;
+            case '4':
+                break;
+            default:
+                printf("Invalid Prompt\n");
+        }
+    } while(a !='4');
+}
 void get1(int *a, int *b){
     printf("Enter 2 numbers:\n");
     scanf("%d%d",a,b);
 }
-void get2(float *a){               //Fixed
+void get2(double *a){               //Fixed   //Changed again due to some reasons
     printf("Enter a number:\n");
     scanf("%f",a);
 }
