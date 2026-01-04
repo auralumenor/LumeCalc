@@ -1,3 +1,0 @@
-E:/BTech_AI_ML/Semester_1/Other _works/LumeCalc/build/CMakeFiles/LumeCalc.dir
-E:/BTech_AI_ML/Semester_1/Other _works/LumeCalc/build/CMakeFiles/edit_cache.dir
-E:/BTech_AI_ML/Semester_1/Other _works/LumeCalc/build/CMakeFiles/rebuild_cache.dir
