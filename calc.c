@@ -101,7 +101,7 @@ void sci_men(){
     float a;           //Shifted to float operator
     char op;
     do {
-        printf("\nEnter the operator you want to use:\n1. Square Root\n2. Power\n3. Logarithm\n4. Exit\n");
+        printf("Enter the operator you want to use:\n1. Square Root\n2. Power\n3. Logarithm\n4. Exit\n");
         scanf(" %c",&op);
         switch(op){
             case '1':
@@ -128,7 +128,7 @@ void tri_men(){
     char op;
     do {
         printf("Enter the operator you want to use:\n1. Sine\n2. Cosine\n3. Tangent\n4. Arctangent\n5. ArcCosine\n6. ArcSine\n7.Exit\n");
-        scanf("%c",&op);
+        scanf(" %c",&op);
         switch(op){
             case '1':
                 get3(&a);
@@ -207,7 +207,7 @@ double sqrt_custom(double a){
     }
 }
 double powr(double a){
-        float b;
+        double b;       //Fixed
         printf("Enter the exponential value which you want to apply:\n");
         scanf("%lf",&b);
         printf("%.2f is raised to %.2f is: %.2f\n", a, b, pow(a, b));
