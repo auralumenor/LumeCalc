@@ -1,6 +1,5 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 3.10)
 project(LumeCalc)
 set(CMAKE_C_STANDARD 14)
-include_directories(.)
-${LumeCalc_SOURCE_DIR}/include
-add_executable(${PROJECT_NAME} calc.c)         #Fixed
+include_directories(. ${LumeCalc_SOURCE_DIR}/include)
+add_executable(${PROJECT_NAME} calc.c)
