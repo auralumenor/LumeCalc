@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\LumeCalc.dir/objects.a
-C:\MinGW64\bin\ar.exe qc CMakeFiles\LumeCalc.dir/objects.a @CMakeFiles\LumeCalc.dir\objects1.rsp
-C:\MinGW64\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\LumeCalc.dir/objects.a -Wl,--no-whole-archive -o LumeCalc.exe -Wl,--out-implib,libLumeCalc.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\LumeCalc.dir\linkLibs.rsp
